@@ -1,5 +1,37 @@
-<form (ngSubmit)="onSubmit()" class="w-[27rem] p-6 rounded-lg shadow-md">
+<div class="flex justify-center h-screen items-center overflow-hidden">
+  <div class="container">
+    <div class="cover" [ngClass]="{ 'route-active': isRegister }">
+      <div class="front">
+        <img
+          src="https://images.pexels.com/photos/4050078/pexels-photo-4050078.jpeg"
+          alt=""
+        />
 
+        <div class="text">
+            <span class="text-1">
+                Share, savor, and Create: your Recipe haven 
+                awaits!
+
+            </span>
+            <span>Let's get connected</span>
+
+        </div>
+      </div>
+      <div class="back">
+        <img src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+
+      </div>
+    </div>
+
+    <div class="from h-full">
+
+        <div class="form-content h-full">
+
+            <div class="login-form">
+<h1 class="text-lg font-bold text-center
+ pb-8">Signup</h1>
+<form 
+(ngSubmit)="onSubmit()" class="">
     <div class="mb-4">
 
         <mat-form-field class="w-full">
@@ -39,20 +71,14 @@
                           </mat-form-field>
                           <div>
 
-                            <div class="mb-4">
+      
 
-                            <mat-radio-group name="foodType"
-                                             [(ngModel)]="recipeItem.foodType" 
-                                             aria-label="Select an option">
-                                        <mat-radio-button value="veg">Vegetarian</mat-radio-button>
-                                        <mat-radio-button value="non_veg">Non vegetarian</mat-radio-button>
-                                      </mat-radio-group>
-                                      
-                                  <div>
 
-            <button mat-raised-button color="primary" type="submit">
-                Create
-            </button>
-          </div>
-        
+
+            </div>
+
+        </div>
+
     </div>
+  </div>
+</div>

@@ -29,8 +29,11 @@
 }
 
 
-.container .rotate-active {
+.container  .rotate-active  {
     transform: rotateY(-180deg);
+    backface-visibility: hidden;
+
+    
 }
 
 .container .cover .front,
@@ -104,12 +107,14 @@
     justify-content: space-between;
 }
 
-
 .form-content .login-form,
 .form-content .signup-form {
     width: calc(100% / 2 - 25px);
     color: #fff;
+
 }
+
+
 
 
   

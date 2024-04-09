@@ -30,8 +30,10 @@ export class AuthServiceService {
     {headers}).pipe(
       tap((user)=>{
         console.log("get user profile",user)
-        const currentState=this.authSubject.value;
-        this.authSubject.next({...currentState,user})
+        
+          const currentState = this.authSubject.value;
+          this.authSubject.next({ ...currentState, user });
+        
 
     })
    )

@@ -7,6 +7,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { AuthComponent } from './pages/auth/auth.component';
 import { AuthServiceService } from './services/Auth/auth-service.service';
 
+
 @Component({
     selector: 'app-root',
     standalone: true,
@@ -17,7 +18,7 @@ import { AuthServiceService } from './services/Auth/auth-service.service';
 export class AppComponent {
   title = 'Recette_sharing';
 
-  user:any=null
+  user:any=null;
 
   constructor(public authService:AuthServiceService){}
 
@@ -27,7 +28,6 @@ export class AppComponent {
     next:data=>console.log("req user",data),
     error:error=>console.log("error",error)
   });
-
   this.authService.authSubject.subscribe(
     (auth)=>{
       console.log("auth state",auth)

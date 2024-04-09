@@ -15,7 +15,7 @@ export class RecipeServiceService {
     recipes:[],
     loading:false,
     newRecipe:null
-  });
+  })
 
   private getHeaders():HttpHeaders{
     const token=localStorage.getItem("jwt")
@@ -28,8 +28,10 @@ export class RecipeServiceService {
     const headers=this.getHeaders();
     return this.http.get(`${this.baseUrl}/api/recipes`,{headers}).pipe(
       tap((recipes)=>{
-        const currentState=this.recipeSubject.value
+        console.log('Recipes received:', recipes);
+        const currentState=this.recipeSubject.value;
         this.recipeSubject.next({...currentState,recipes});
+
       })
 
     );

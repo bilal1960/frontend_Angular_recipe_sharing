@@ -1,36 +1,46 @@
 <mat-card class="example-card">
-    <mat-card-header>
-      <img mat-card-avatar src="https://www.pngrepo.com/png/384670/512/account-avatar-profile-user.png" alt="">
-      <mat-card-title>Learn Angular</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img class="max-h-[350px] object-conver " mat-card-image src="https://m1.quebecormedia.com/emp/cdp_prod/coup_de_pouce-_-5bc421d0955c044b0f6af6e28b87d74be7646246-_-dynamic-resize.jpg?impolicy=resize&width=1500&height=1500" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions class="flex justify-between">
-      <div>
-        <button mat-icon-button  aria-label="Example icon button with a home icon">
-          <mat-icon>favorite</mat-icon>
-        </button>
+  <mat-card-header>
+    <img
+      mat-card-avatar
+      src="https://www.pngrepo.com/png/384670/512/account-avatar-profile-user.png"
+      alt=""
+    />
+    <mat-card-title>{{ recipe.user.fullName }}</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    class="max-h-[350px] object-conver"
+    mat-card-image
+    [src]="recipe.image"
+    alt="Photo of a Shiba Inu"
+  />
+  <mat-card-content>
+    <p>
+      {{ recipe.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="flex justify-between">
+    <div>
+      <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
 
-        <button (click)="handleOpenEditRecipeForm()" mat-icon-button  aria-label="Example icon button with a home icon">
-          <mat-icon>edit</mat-icon>
-        </button>
+      <button
+        (click)="handleOpenEditRecipeForm()"
+        mat-icon-button
+        aria-label="Example icon button with a home icon"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
 
-        <button mat-icon-button  aria-label="Example icon button with a home icon">
-          <mat-icon>share</mat-icon>
-        </button>
-      </div>
-      <div>
-        <button mat-icon-button  aria-label="Example icon button with a home icon">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </div>
-    </mat-card-actions>
-  </mat-card>
-  
+      <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button aria-label="Example icon button with a home icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

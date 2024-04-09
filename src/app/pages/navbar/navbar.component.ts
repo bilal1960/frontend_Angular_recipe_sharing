@@ -14,14 +14,12 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
 
-user:any=null
+user:any=null;
 
   constructor(public authService:AuthServiceService, private router:Router){}
 
   ngOnInit() {
-    console.log("ngOnInIt")
-  
-
+    console.log("ngOnInIt called")
   this.authService.authSubject.subscribe(
     (auth)=>{
       console.log("auth state",auth)

@@ -5,6 +5,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { UpdateRecipeFormComponent } from '../update-recipe-form/update-recipe-form.component';
+import { RecipeServiceService } from '../../services/Recipe/recipe-service.service';
 
 
 @Component({
@@ -18,10 +19,14 @@ export class RecipeCardComponent {
 
   @Input() recipe:any
 
-  constructor(public dialog:MatDialog){}
+  constructor(public dialog:MatDialog, private recipeService:RecipeServiceService){}
 
     handleOpenEditRecipeForm(){
       this.dialog.open(UpdateRecipeFormComponent)
+
+    }
+
+    handleDeleteRecipe(){
 
     }
   

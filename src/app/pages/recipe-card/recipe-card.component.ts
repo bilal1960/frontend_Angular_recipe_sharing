@@ -27,6 +27,7 @@ export class RecipeCardComponent {
     }
 
     handleDeleteRecipe(){
+      this.recipeService.deleteRecipes(this.recipe.id).subscribe()
 
     }
   

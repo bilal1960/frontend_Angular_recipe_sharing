@@ -82,17 +82,19 @@ export class RecipeServiceService {
     );
   }
 
-  deleteRecipes(id:any):Observable<any>{
+  deleteRecipes(id: any):Observable<any>{
     const headers=this.getHeaders();
-    return this.http.delete(`${this.baseUrl}/api/recipes/${id}`,{headers}).pipe(
-      tap((deletedRecipe:any)=>{
+    return this.http.delete(`${this.baseUrl}/api/recipes/${id}`,
+    {headers})
+    .pipe(
+      tap((deletedRecipe: any)=>{
         const currentState=this.recipeSubject.value
         const updatedRecipes=currentState.recipes.filter
         ((item:any)=>
           item.id !== id
         );
         this.recipeSubject.next({...currentState,
-          recipes:updatedRecipes });
+          recipes: updatedRecipes });
       })
 
     );

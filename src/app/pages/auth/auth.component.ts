@@ -44,7 +44,6 @@ export class AuthComponent {
       next:(response)=>{
         localStorage.setItem("jwt",response.jwt);
         this.authService.getUserProfile().subscribe();
-        console.log("signup success",response)
       }
     })
 
@@ -56,7 +55,6 @@ export class AuthComponent {
       next:(response)=>{
         localStorage.setItem("jwt",response.jwt);
         this.authService.getUserProfile().subscribe();
-        console.log("login success",response)
       }
     })
   }

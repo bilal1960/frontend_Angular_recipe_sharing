@@ -33,7 +33,6 @@ export class HomePageComponent  {
     )
     this.recipeService.recipeSubject.subscribe(
       (state)=>{
-        console.log("recipe state",state)
         this.recipes=state.recipes
       }
     )

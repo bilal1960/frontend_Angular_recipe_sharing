@@ -19,10 +19,8 @@ user:any=null;
   constructor(public authService:AuthServiceService, private router:Router){}
 
   ngOnInit() {
-    console.log("ngOnInIt called")
   this.authService.authSubject.subscribe(
     (auth)=>{
-      console.log("auth state",auth)
       this.user=auth.user
     }
   )
@@ -31,7 +29,7 @@ user:any=null;
 
     handleLogOut(){
       this.authService.logout()
-      //this.router.navigate("/")
+      //this.router.navigate(['/'])
 
   }
 

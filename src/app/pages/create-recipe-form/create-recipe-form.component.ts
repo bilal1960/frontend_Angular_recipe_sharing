@@ -30,8 +30,7 @@ export class CreateRecipeFormComponent {
     console.log("values",this.recipeItem)
     this.recipeService.createRecipe(this.recipeItem).subscribe(
       {
-        next:data=>console.log("created recipe",data),
-        error : error=> console.log("error",error)
+        
       }
     )
 

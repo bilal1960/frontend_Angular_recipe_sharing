@@ -23,14 +23,11 @@ export class AppComponent {
   constructor(public authService:AuthServiceService){}
 
   ngOnInit() {
-    console.log("ngOnInIt")
     this.authService.getUserProfile().subscribe({
-    next:data=>console.log("req user",data),
-    error:error=>console.log("error",error)
+    
   });
   this.authService.authSubject.subscribe(
     (auth)=>{
-      console.log("auth state",auth)
       this.user=auth.user
     }
   )

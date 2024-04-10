@@ -29,7 +29,6 @@ export class AuthServiceService {
     return this.http.get<any>(`${this.baseUrl}/api/users/profile`, 
     {headers}).pipe(
       tap((user)=>{
-        console.log("get user profile",user)
         
           const currentState = this.authSubject.value;
           this.authSubject.next({ ...currentState, user });

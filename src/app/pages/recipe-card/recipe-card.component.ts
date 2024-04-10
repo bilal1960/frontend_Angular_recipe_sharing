@@ -22,14 +22,21 @@ export class RecipeCardComponent {
   constructor(public dialog:MatDialog, private recipeService:RecipeServiceService){}
 
     handleOpenEditRecipeForm(){
-      this.dialog.open(UpdateRecipeFormComponent)
+      this.dialog.open(UpdateRecipeFormComponent,
+        {data: this.recipe
 
+        })
+
+    }
+
+    ngOnInit(){
+       
     }
 
     handleDeleteRecipe(){
+      console.log("suppression",this.recipe.id)
       this.recipeService.deleteRecipes(this.recipe.id).subscribe()
 
     }
-  
 
 }

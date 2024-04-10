@@ -17,19 +17,24 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class UpdateRecipeFormComponent {
 
   recipeItem:any={
-    title:"pizza",
-    description:"degusting",
-    foodType:"non_veg",
-    image:"image"
+    title:"",
+    description:"",
+    foodType:"",
+    image:""
   }
 
   constructor(@Inject(MAT_DIALOG_DATA) public recipe: any, private recipeService:RecipeServiceService){}
 
   onSubmit(){
 
-    this.recipeService.deleteRecipes(1)
+    this.recipeService.updateRecipes(this.recipeItem).subscribe({
 
-    console.log("values",this.recipeItem)
+    })
+
+  }
+
+  ngOnInit(){
+    this.recipeItem=this.recipe
 
   }
 
